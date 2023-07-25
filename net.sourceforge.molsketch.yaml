@@ -31,8 +31,7 @@ modules:
         path: fix_time_check_typo.patch
 
   - name: Molsketch
-    buildsystem: cmake
-    # subdir: Molsketch-0.8.0
+    buildsystem: cmake-ninja
     config-opts:
       - -DMSK_PREFIX=/app
       - -DMSK_INSTALL_LIBS=/lib
