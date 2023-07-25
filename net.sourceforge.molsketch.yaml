@@ -26,15 +26,29 @@ modules:
           project-id: 2539
           stable-only: true
           url-template: https://github.com/openbabel/openbabel/releases/download/openbabel-${major}-${minor}-${patch}/openbabel-${version}-source.tar.bz2
+        # https://github.com/openbabel/openbabel/pull/2493/commits/c0570bfeb2d7e0a6a6de1f257cf28e7f3cac8739
+      - type: patch
+        path: fix_time_check_typo.patch
 
   - name: Molsketch
     buildsystem: cmake
+    # subdir: Molsketch-0.8.0
     config-opts:
       - -DMSK_PREFIX=/app
       - -DMSK_INSTALL_LIBS=/lib
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-0.7.3-src.tar.gz
-        sha256: 79c8e7c7d00246d7d9da4a11742dba02de3f96e701220709c16772e58178b44d
-        strip-components: 0
-
+        url: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-0.8.0-src.tar.gz
+        sha256: 329c787c792dc6a040926770aa0da95ef120bef19440f6e0ab12b05ca8e126e4
+      #   # strip-components: 0
+      # - type: patch
+      #   path: transform_reduce_not_std.patch
+      #   # strip-components: 2
+        # - type: git
+        #   url: https://github.com/hvennekate/Molsketch
+        #   commit: 6402a208cbecdea8deac9321cca61e601d672531
+        # - type: archive
+        #   url: https://github.com/hvennekate/Molsketch/archive/refs/tags/Fluorine_0.8.0.tar.gz
+        #   sha256: 37c960de78e061c202bc8b0e882510b409b154cdd06d457353898ccdb8445f86
+      - type: patch
+        path: update_c_standard.patch
