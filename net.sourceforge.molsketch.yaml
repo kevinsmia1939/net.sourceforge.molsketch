@@ -43,6 +43,6 @@ modules:
           type: anitya
           project-id: 15739
           stable-only: true
-          url-template: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-%version-src.tar.gz
+          url-template: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-$version-src.tar.gz
       - type: patch
         path: update_c_standard.patch
