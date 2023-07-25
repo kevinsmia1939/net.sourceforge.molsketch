@@ -26,15 +26,23 @@ modules:
           project-id: 2539
           stable-only: true
           url-template: https://github.com/openbabel/openbabel/releases/download/openbabel-${major}-${minor}-${patch}/openbabel-${version}-source.tar.bz2
+        # https://github.com/openbabel/openbabel/pull/2493/commits/c0570bfeb2d7e0a6a6de1f257cf28e7f3cac8739
+      - type: patch
+        path: fix_time_check_typo.patch
 
   - name: Molsketch
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - -DMSK_PREFIX=/app
       - -DMSK_INSTALL_LIBS=/lib
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-0.7.3-src.tar.gz
-        sha256: 79c8e7c7d00246d7d9da4a11742dba02de3f96e701220709c16772e58178b44d
-        strip-components: 0
-
+        url: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-0.8.0-src.tar.gz
+        sha256: 329c787c792dc6a040926770aa0da95ef120bef19440f6e0ab12b05ca8e126e4
+        x-checker-data:
+          type: anitya
+          project-id: 15739
+          stable-only: true
+          url-template: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-$version-src.tar.gz
+      - type: patch
+        path: update_c_standard.patch
