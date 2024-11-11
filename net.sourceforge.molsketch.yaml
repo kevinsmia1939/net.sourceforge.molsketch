@@ -1,8 +1,8 @@
 app-id: net.sourceforge.molsketch
 runtime: org.kde.Sdk
 sdk: org.kde.Sdk
-runtime-version: 5.15-22.08
-base-version: 5.15-22.08
+runtime-version: 5.15-24.08
+base-version: 5.15-24.08
 command: molsketch
 rename-icon: molsketch
 rename-desktop-file: molsketch.desktop
@@ -27,7 +27,8 @@ modules:
           project-id: 2539
           stable-only: true
           url-template: https://github.com/openbabel/openbabel/releases/download/openbabel-${major}-${minor}-${patch}/openbabel-${version}-source.tar.bz2
-        # https://github.com/openbabel/openbabel/pull/2493/commits/c0570bfeb2d7e0a6a6de1f257cf28e7f3cac8739
+      - type: patch
+        path: Removed_non-compiling_assignment_operator.patch #https://github.com/Tencent/rapidjson/pull/719 https://github.com/openbabel/openbabel/pull/2721
       - type: patch
         path: fix_time_check_typo.patch
 
