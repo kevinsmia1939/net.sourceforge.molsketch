@@ -46,5 +46,5 @@ modules:
           project-id: 15739
           stable-only: true
           url-template: https://sourceforge.net/projects/molsketch/files/Molsketch/Molsketch-$version-src.tar.gz
-     - type: patch
-       path: add_dev_name.patch
+      - type: patch
+        path: add_dev_name.patch
